@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #data{
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px 10px;
+            width: 180px;
+            margin-bottom: 10px;
+        }
+        table{
+            width: 200px;
+            height: 250px;
+        }
+        #cal{
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 5px;
+            width: 200px;
+            text-align: center;
+            margin: 0 auto;
+            color: white;
+            background: darkgray;
+        }
+        #ci{
+            border: 1px solid black;
+            margin-right: 130px;
+            border-color: black;
+            color: black;
+            background-color: white;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cal">
+   <input type="text" placeholder="number" id="data">
+   <div id="ci">
+       <th>citizen</th>
+   </div>
+      <table border="1">
+     <tr>
+        <th onclick="btn(7)" style="background-color:black;">7</th>
+        <th onclick="btn(8)" style="background-color: black;">8</th>
+        <th onclick="btn(9)" style="background-color: black;">9</th>
+        <th onclick="btn('*')" style="background-color:black;">*</th>
+     </tr>
+     <tr>
+        <th onclick="btn(4)" style="background-color: black;">4</th>
+        <th onclick="btn(5)" style="background-color: black;">5</th>
+        <th onclick="btn(6)" style="background-color: black;">6</th>
+        <th onclick="btn('-')" style="background-color: black;">-</th>
+     </tr>
+     <tr>
+        <th onclick="btn(1)" style="background-color: black;">1</th>
+        <th onclick="btn(2)" style="background-color:black;">2</th>
+        <th onclick="btn(3)" style="background-color: black;">3</th>
+        <th onclick="btn('+')" style="background-color:black;">+</th>
+     </tr>
+     <tr>
+        <th onclick="btn(0)" style="background-color: black;">0</th>
+        <th onclick="btn('.')" style="background-color: black;">.</th>
+        <th onclick="btn('/')" style="background-color: black;">/</th>
+        <th onclick="btn('00')" style="background-color: black;">00</th>
+     </tr>
+     <tr>
+        <th onclick="cl()" colspan="2" style="background-color: red;">AC</th>
+        <th onclick="total()" colspan="2" style="background-color: orange;">=</th>
+     </tr>
+   </table>
+    </div>
+</body>
+<script>
+    function btn(num){
+      document.getElementById('data').value += num
+    }
+    function total(){
+        document.getElementById('data').value = eval(document.getElementById('data').value)
+    }
+    function cl(){
+        document.getElementById('data').value = "     "
+    }
+</script>
+</html>
